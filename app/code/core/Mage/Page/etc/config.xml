@@ -54,6 +54,11 @@
                     <template>page/home.phtml</template>
                     <layout_handle>page_home</layout_handle>
                 </page_home>
+                <collection module="page" translate="label">
+                    <label>CollectionPage</label>
+                    <template>page/collection.phtml</template>
+                    <layout_handle>page_collection</layout_handle>
+                </collection>
                 <page_standard module="page" translate="label">
                     <label>StandardPage</label>
                     <template>page/standard.phtml</template>

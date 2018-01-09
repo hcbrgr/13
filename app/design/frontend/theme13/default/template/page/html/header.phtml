@@ -42,10 +42,10 @@
         -->
             <h1 class="header__logo"><a href="<?php echo $this->getUrl('') ?>"><img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" /></a></h1>
             <ul class="header__icons">
-               <li><a class="header__icons-single" href="<?php echo $this->helper('customer')->getAccountUrl(); ?>"><img src="assets/svg/search-icon.svg" alt="search" /></a></li>
-               <li><a class="header__icons-single"><img src="assets/svg/profile-icon.svg" alt="profile" /></a></li>
+               <li><a class="header__icons-single" href="<?php echo $this->helper('customer')->getAccountUrl(); ?>"><img src="<?php echo $this->getSkinUrl(‘images/search-icon.svg’) ?>" alt="search" /></a></li>
+               <li><a class="header__icons-single"><img src="<?php echo $this->getSkinUrl(‘images/profile-icon.svg’) ?>" alt="profile" /></a></li>
                <?php echo $this->getChildHtml('minicart_head'); ?>
-               <li><a class="header__icons-single"><img src="assets/svg/cart-icon.svg" alt="cart" /></a></li>
+               <li><a class="header__icons-single"><img src="<?php echo $this->getSkinUrl(‘images/cart-icon.svg’) ?>"" alt="cart" /></a></li>
             </ul>
          </div>
          <?php echo $this->getChildHtml('topMenu') ?>

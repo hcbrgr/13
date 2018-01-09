@@ -29,6 +29,8 @@
 /*
  * Corrects `block` display not defined in IE 8/9.
  */
+
+ /*
 article,
 aside,
 details,
@@ -10602,6 +10604,8 @@ div.calendar table td.button {
   text-transform: none;
 }
 
+
+*/
 /* NEW */
 * {
   box-sizing: border-box; }

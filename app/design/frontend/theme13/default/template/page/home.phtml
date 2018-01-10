@@ -57,6 +57,7 @@
 <p class="home__section-text text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam rhoncus lacus at gravida finibus. In sit amet imperdiet eros, at porta risus. Curabitur neque nibh, suscipit tempus pellentesque a, convallis sed nisi.</p>
 <a class="home__section-button button button-black">Call to action</a></div>
 </div>
+<?php echo $this->getChildHtml('content') ?>
 <?php echo $this->getChildHtml('mise_en_avant') ?>
 <?php echo $this->getChildHtml('createur') ?>
 <?php echo $this->getChildHtml('articles') ?>
@@ -64,8 +65,6 @@
 <?php echo $this->getAbsoluteFooter()?>
 </body>
 </html>
-
-
 
 <!-- 
                 <?php /* echo $this->getChildHtml('breadcrumbs') ?>

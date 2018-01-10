@@ -32,7 +32,7 @@
 
     <default translate="label" module="page">
         <label>All Pages</label>
-        <block type="page/html" name="root" output="toHtml" template="page/3columns.phtml">
+        <block type="page/html" name="root" output="toHtml" template="page/standard.phtml">
 
             <block type="page/html_head" name="head" as="head">
                 <action method="addJs"><script>prototype/prototype.js</script></action>
@@ -147,6 +147,13 @@
                 <!--<block type="cms/block" name="footer_social_links">
                     <action method="setBlockId"><block_id>footer_social_links</block_id></action>
                 </block>-->
+                <block type="cms/block" name="mise_en_avant">
+                    <action method="setBlockId"><block_id>mise_en_avant</block_id></action>
+                </block>
+                <block type="cms/block" name="createur">
+                    <action method="setBlockId"><block_id>createur</block_id></action>
+                </block>
+                
             </block>
 
             <block type="core/text_list" name="before_body_end" as="before_body_end" translate="label">

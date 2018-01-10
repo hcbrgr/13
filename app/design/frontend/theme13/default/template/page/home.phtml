@@ -56,9 +56,12 @@
 <p class="home__section-text text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam rhoncus lacus at gravida finibus. In sit amet imperdiet eros, at porta risus. Curabitur neque nibh, suscipit tempus pellentesque a, convallis sed nisi.</p>
 <a class="home__section-button button button-black">Call to action</a></div>
 </div>
-<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('mise_en_avant')->toHtml();
-?>
-<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('createur')->toHtml(); ?>
+
+
+<?php echo $this->getChildHtml('mise_en_avant') ?>
+<?php echo $this->getChildHtml('createur') ?>
+
+
 
 <div class="home__section home__articles">
 <div class="home__articles-content">
@@ -66,6 +69,44 @@
 <p class="home_articles-text text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam rhoncus lacus at gravida finibus. In sit amet imperdiet eros, at porta risus.</p>
 </div>
 <div class="home__articles-list-container">
+
+
+
+<?php function CallAPI($method, $url, $data = false)
+{
+    $curl = curl_init();
+
+    switch ($method)
+    {
+        case "POST":
+            curl_setopt($curl, CURLOPT_POST, 1);
+
+            if ($data)
+                curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
+            break;
+        case "PUT":
+            curl_setopt($curl, CURLOPT_PUT, 1);
+            break;
+        default:
+            if ($data)
+                $url = sprintf("%s?%s", $url, http_build_query($data));
+    }
+
+    // Optional Authentication:
+    curl_setopt($curl, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
+    curl_setopt($curl, CURLOPT_USERPWD, "username:password");
+
+    curl_setopt($curl, CURLOPT_URL, $url);
+    curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+
+    $result = curl_exec($curl);
+
+    curl_close($curl);
+
+    return $result;
+}
+?>
+
 <div class="home__articles-list">
 <div class="home__articles-list-item">
 <div class="home__articles-list-image"></div>

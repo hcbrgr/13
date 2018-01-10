@@ -36,6 +36,7 @@
 
             <block type="page/html_head" name="head" as="head">
                 <action method="addItem"><type>skin_js</type><name>js/jquery.js</name></action>
+                <action method="addItem"><type>skin_js</type><name>js/no-conflict.js</name></action>
                 <action method="addJs"><script>prototype/prototype.js</script></action>
                 <action method="addJs"><script>lib/ccard.js</script></action>
                 <action method="addJs"><script>prototype/validation.js</script></action>

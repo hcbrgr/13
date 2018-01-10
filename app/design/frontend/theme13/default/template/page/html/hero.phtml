@@ -6,14 +6,8 @@ $_categories = $_helper->getStoreCategories();
 if (count($_categories) > 0){
     foreach($_categories as $_category){
         $_category = Mage::getModel('catalog/category')->load($_category->getId());
-        $_subcategories = $_category->getChildrenCategories();
-        if (count($_subcategories) > 0){
             echo $_category->getName();
-            echo $_category->getId();      
-            foreach($_subcategories as $_subcategory){
-                 echo $_subcategory->getName();
-                 echo $_subcategory->getId();
-            }
+            echo $_category->getId();
         }
     }
 }

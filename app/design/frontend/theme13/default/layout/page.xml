@@ -134,6 +134,7 @@
             <block type="core/template" name="articles" template="page/html/articles/articles.phtml"/>
 
              <!-- END HOME -->
+
             <block type="core/text_list" name="right" as="right" translate="label">
                 <label>Right Column</label>
             </block>

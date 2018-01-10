@@ -57,9 +57,9 @@ $data = [];
                 $url = $product->getCategoryUrl();
                 $name = $product->getData('name');
                 $content = array($url, $name);
-				$data[] = $content;
+				array_push($data, $content);
             }; ?>
-<?php }; 
+<?php };
 
 var_dump($data);?>
 

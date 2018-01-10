@@ -9,15 +9,16 @@ $total = $this->helper('checkout/cart')->getQuote()->getGrandTotal(); //get tota
       <a class="module13__close"></a>
 
       <h3 class="cart__title">Mon panier</h3>
-
+      <?php if($this->getItemCount()){ ?>
       <ul class="cart__content">
 
+        <?php foreach ($this->getItems() as $_item): ?>
          <li class="cart__content-product">
-            <div class="cart__content-product-image"></div>
+            <div class="cart__content-product-image" style="background-image: url('<?php echo $this->helper('catalog/image')->init($_item, 'thumbnail')->resize(210); ?>');"></div>
             <div class="cart__content-product-details">
                <div class="cart__content-product-infos">
                   <h3 class="cart__content-product-title">
-                     Chemise Silk
+                  <?php echo $this->escapeHtml($_item->getName()) ?>
                   </h3>
                   <p class="cart__content-product-sc text-small">
                      Taille : M
@@ -27,89 +28,20 @@ $total = $this->helper('checkout/cart')->getQuote()->getGrandTotal(); //get tota
                   </p>
                </div>
                <div class="cart__content-product-price">
-                  <a class="cart__content-product-delete">
+                  <a class="cart__content-product-delete" href="<?php $this->getUrl('checkout/cart/delete', array('id' => $_item->getId())); ?>">
                      supprimer
                   </a>
                   <p class="cart__content-product-cost">
-                     <b>190€</b> TTC
+                     <b> <?php echo $this->getPriceHtml($_item, true) ?></b> TTC
                   </p>
                </div>
             </div>
          </li>
-         <li class="cart__content-product">
-            <div class="cart__content-product-image"></div>
-            <div class="cart__content-product-details">
-               <div class="cart__content-product-infos">
-                  <h3 class="cart__content-product-title">
-                     Chemise Silk
-                  </h3>
-                  <p class="cart__content-product-sc text-small">
-                     Taille : M
-                  </p>
-                  <p class="cart__content-product-sc text-small">
-                     Colori: Azure
-                  </p>
-               </div>
-               <div class="cart__content-product-price">
-                  <a class="cart__content-product-delete">
-                     supprimer
-                  </a>
-                  <p class="cart__content-product-cost">
-                     <b>190€</b> TTC
-                  </p>
-               </div>
-            </div>
-         </li>
-         <li class="cart__content-product">
-            <div class="cart__content-product-image"></div>
-            <div class="cart__content-product-details">
-               <div class="cart__content-product-infos">
-                  <h3 class="cart__content-product-title">
-                     Chemise Silk
-                  </h3>
-                  <p class="cart__content-product-sc text-small">
-                     Taille : M
-                  </p>
-                  <p class="cart__content-product-sc text-small">
-                     Colori: Azure
-                  </p>
-               </div>
-               <div class="cart__content-product-price">
-                  <a class="cart__content-product-delete">
-                     supprimer
-                  </a>
-                  <p class="cart__content-product-cost">
-                     <b>190€</b> TTC
-                  </p>
-               </div>
-            </div>
-         </li>
-         <li class="cart__content-product">
-            <div class="cart__content-product-image"></div>
-            <div class="cart__content-product-details">
-               <div class="cart__content-product-infos">
-                  <h3 class="cart__content-product-title">
-                     Chemise Silk
-                  </h3>
-                  <p class="cart__content-product-sc text-small">
-                     Taille : M
-                  </p>
-                  <p class="cart__content-product-sc text-small">
-                     Colori: Azure
-                  </p>
-               </div>
-               <div class="cart__content-product-price">
-                  <a class="cart__content-product-delete">
-                     supprimer
-                  </a>
-                  <p class="cart__content-product-cost">
-                     <b>190€</b> TTC
-                  </p>
-               </div>
-            </div>
-         </li>
+        <?php endforeach ?>
+        
 
       </ul>
+        <?php } else{?> <p>Aucun produit dans le panier <?php } ?>
 
       <div class="cart__details">
          <h3 class="cart__details-title">Détails du panier</h3>

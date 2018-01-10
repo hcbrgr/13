@@ -39,7 +39,7 @@
 <div class="product__back">
    <a class="product__back-link"><img src="assets/svg/previous-icon.svg" /> Retour</a>
 </div>
-
+<?php echo $this->getChildHtml('media') ?>
 <div class="product__image">
    <img src="assets/img/product-image-01.jpg" />
    <img src="assets/img/product-image-02.jpg" />
@@ -47,16 +47,17 @@
 
 <div class="product__infos">
    <div class="product__infos-details">
-      <h1 class="product__infos-title title">Robe Violeta</h1>
-      <p class="product__infos-ref">
-         NB3AB09B3D6 F54
+      <h1 class="product__infos-title title"><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></h1>
+      <p class="product__infos-ref"> <?php
+      $categories = $_product->getCategoryCollection()
+    ->addAttributeToSelect('name')
+    ->addUrlRewriteToResult(); ?>
       </p>
-      <span class="product__infos-price">350€</span>
+      <span class="product__infos-price"> <?php echo $this->getPriceHtml($_product); ?> €</span>
       <span class="product__infos-price-tax">TTC</span>
       <p class="product__infos-description text">
-         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-         Aliquam rhoncus lacus at gravida finibus. In sit amet imperdiet eros,
-         at porta risus.
+      <?php echo $_helper->productAttribute($_product, nl2br($_product->getShortDescription()), 'short_description') ?>
+     
       </p>
       <a class="product__infos-description-more">Plus de détails +</a>
    </div>

@@ -5,7 +5,7 @@ $_categories = $_helper->getStoreCategories();
 if (count($_categories) > 0){
     foreach($_categories as $_category){
         $_category = Mage::getModel('catalog/category')->load($_category->getId());
-            echo $_category->getData();
+            var_dump($_category->getData());
         }
 }
 

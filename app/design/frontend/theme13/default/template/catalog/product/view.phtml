@@ -33,6 +33,52 @@
 ?>
 <?php $_helper = $this->helper('catalog/output'); ?>
 <?php $_product = $this->getProduct(); ?>
+
+<div class="page13 product">
+
+<div class="product__back">
+   <a class="product__back-link"><img src="assets/svg/previous-icon.svg" /> Retour</a>
+</div>
+
+<div class="product__image">
+   <img src="assets/img/product-image-01.jpg" />
+   <img src="assets/img/product-image-02.jpg" />
+</div>
+
+<div class="product__infos">
+   <div class="product__infos-details">
+      <h1 class="product__infos-title title">Robe Violeta</h1>
+      <p class="product__infos-ref">
+         NB3AB09B3D6 F54
+      </p>
+      <span class="product__infos-price">350€</span>
+      <span class="product__infos-price-tax">TTC</span>
+      <p class="product__infos-description text">
+         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+         Aliquam rhoncus lacus at gravida finibus. In sit amet imperdiet eros,
+         at porta risus.
+      </p>
+      <a class="product__infos-description-more">Plus de détails +</a>
+   </div>
+   <form class="product__infos-options">
+      <select name="color">
+         <option value="" disabled selected>Choix de la couleur</option>
+         <option value="Rouge">Rouge</option>
+         <option value="Bleue">Bleue</option>
+      </select>
+      <select name="size">
+         <option value="" disabled selected>Choix de la taille</option>
+         <option value="S">S</option>
+         <option value="M">M</option>
+         <option value="L">L</option>
+      </select>
+      <input class="" type="submit" value="Ajouter au Panier">
+   </form>
+</div>
+
+</div>
+
+
 <script type="text/javascript">
     var optionsPrice = new Product.OptionsPrice(<?php echo $this->getJsonConfig() ?>);
 </script>

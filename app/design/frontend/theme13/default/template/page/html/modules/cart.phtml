@@ -1,6 +1,7 @@
 <?php
 $count = $this->helper('checkout/cart')->getSummaryCount();  //get total items in cart
 $total = $this->helper('checkout/cart')->getQuote()->getGrandTotal(); //get total price
+$cart = Mage::getModel('checkout/cart')->getQuote();
 ?>
 
 <div class="cart module13">
@@ -11,13 +12,13 @@ $total = $this->helper('checkout/cart')->getQuote()->getGrandTotal(); //get tota
       <h3 class="cart__title">Mon panier</h3>
       <ul class="cart__content">
       <?php if($count > 0){ ?>
-        <?php foreach ($this->helper('checkout/cart')->getItem() as $_item): ?>
+        <?php foreach ($cart->getAllItems() as $item): ?>
          <li class="cart__content-product">
-            <div class="cart__content-product-image" style="background-image: url('<?php echo $this->helper('catalog/image')->init($_item, 'thumbnail')->resize(210); ?>');"></div>
+            <div class="cart__content-product-image" style="background-image: url('<?php echo $this->helper('catalog/image')->init($item, 'thumbnail')->resize(210); ?>');"></div>
             <div class="cart__content-product-details">
                <div class="cart__content-product-infos">
                   <h3 class="cart__content-product-title">
-                  <?php echo $this->escapeHtml($_item->getName()) ?>
+                  <?php $productName = $item->getProduct()->getName(); ?>
                   </h3>
                   <p class="cart__content-product-sc text-small">
                      Taille : M
@@ -31,7 +32,7 @@ $total = $this->helper('checkout/cart')->getQuote()->getGrandTotal(); //get tota
                      supprimer
                   </a>
                   <p class="cart__content-product-cost">
-                     <b> <?php echo $this->getPriceHtml($_item, true) ?></b> TTC
+                     <b> <?php $productPrice = $item->getProduct()->getPrice(); ?></b> TTC
                   </p>
                </div>
             </div>

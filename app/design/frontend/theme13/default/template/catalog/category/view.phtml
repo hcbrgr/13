@@ -1,0 +1,167 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magento.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magento.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2006-2017 X.commerce, Inc. and affiliates (http://www.magento.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<?php
+/**
+ * Category view template
+ *
+ * @see Mage_Catalog_Block_Category_View
+ */
+?>
+
+
+<?php
+    $_helper    = $this->helper('catalog/output');
+    $_category  = $this->getCurrentCategory();
+    $_imgHtml   = '';
+    if ($_imgUrl = $_category->getImageUrl()) {
+        $_imgHtml = '<p class="category-image"><img src="'.$_imgUrl.'" alt="'.$this->escapeHtml($_category->getName()).'" title="'.$this->escapeHtml($_category->getName()).'" /></p>';
+        $_imgHtml = $_helper->categoryAttribute($_category, $_imgHtml, 'image');
+    }
+?>
+
+<div class="page13 collection">
+
+<div class="collection__header" style="backgroung-image: url('<?php $_imgUrl ?>');">
+   <div class="collection__header-content">
+      <p class="collection__header-text">Collection</p>
+      <h1 class="collection__header-title title">
+        <?php echo $_helper->categoryAttribute($_category, $_category->getName(), 'name') ?>
+      </h1>
+   </div>
+</div>
+
+<div class="collection__filters">
+   <div class="collection__filters-content">
+      <a class="collection__filters-button text-small">Filtrer</a>
+      <form>
+         <select class="collection__filters-single" name="collection">
+            <option value="" disabled selected>Collection</option>
+            <option value="Homme">Autumn/Hiver 2018</option>
+            <option value="Femme">Silk</option>
+         </select>
+         <select class="collection__filters-single" name="color">
+            <option value="" disabled selected>Couleur</option>
+            <option value="Rouge">Rouge</option>
+            <option value="Bleu">Bleu</option>
+            <option value="Vert">Vert</option>
+         </select>
+         <select class="collection__filters-single" name="creator">
+            <option value="" disabled selected>Créateur</option>
+            <option value="Jean">Jean</option>
+            <option value="Louis">Louis</option>
+            <option value="David">David</option>
+         </select>
+      </form>
+   </div>
+</div>
+
+<div class="collection__gallery">
+   <div class="collection__gallery-content">
+
+      <div class="collection__gallery-single">
+         <div class="collection__gallery-single-imgbox">
+            <a class="collection__gallery-single-image"></a>
+         </div>
+         <h3 class="collection__gallery-single-name"><a>Robe Violeta</a></h3>
+         <p class="collection__gallery-single-price">350€</p>
+      </div>
+      <div class="collection__gallery-single">
+         <div class="collection__gallery-single-imgbox">
+            <a class="collection__gallery-single-image"></a>
+         </div>
+         <h3 class="collection__gallery-single-name"><a>Robe Violeta</a></h3>
+         <p class="collection__gallery-single-price">350€</p>
+      </div>
+      <div class="collection__gallery-single">
+         <div class="collection__gallery-single-imgbox">
+            <a class="collection__gallery-single-image"></a>
+         </div>
+         <h3 class="collection__gallery-single-name"><a>Robe Violeta</a></h3>
+         <p class="collection__gallery-single-price">350€</p>
+      </div>
+      <div class="collection__gallery-single">
+         <div class="collection__gallery-single-imgbox">
+            <a class="collection__gallery-single-image"></a>
+         </div>
+         <h3 class="collection__gallery-single-name"><a>Robe Violeta</a></h3>
+         <p class="collection__gallery-single-price">350€</p>
+      </div>
+      <div class="collection__gallery-single">
+         <div class="collection__gallery-single-imgbox">
+            <a class="collection__gallery-single-image"></a>
+         </div>
+         <h3 class="collection__gallery-single-name"><a>Robe Violeta</a></h3>
+         <p class="collection__gallery-single-price">350€</p>
+      </div>
+      <div class="collection__gallery-single">
+         <div class="collection__gallery-single-imgbox">
+            <a class="collection__gallery-single-image"></a>
+         </div>
+         <h3 class="collection__gallery-single-name"><a>Robe Violeta</a></h3>
+         <p class="collection__gallery-single-price">350€</p>
+      </div>
+
+   </div>
+</div>
+
+</div>
+
+
+
+
+
+
+
+<div class="page-title category-title">
+    <?php if($this->IsRssCatalogEnable() && $this->IsTopCategory()): ?>
+        <a href="<?php echo $this->getRssLink() ?>" class="link-rss"><?php echo $this->__('Subscribe to RSS Feed') ?></a>
+    <?php endif; ?>
+    <h1><?php echo $_helper->categoryAttribute($_category, $_category->getName(), 'name') ?></h1>
+</div>
+
+<?php echo $this->getMessagesBlock()->toHtml() ?>
+
+<?php if($_imgUrl): ?>
+    <?php echo $_imgHtml ?>
+<?php endif; ?>
+
+<?php if($_description=$this->getCurrentCategory()->getDescription()): ?>
+    <div class="category-description std">
+        <?php echo $_helper->categoryAttribute($_category, $_description, 'description') ?>
+    </div>
+    <?php endif; ?>
+
+<?php if($this->isContentMode()): ?>
+    <?php echo $this->getCmsBlockHtml() ?>
+
+<?php elseif($this->isMixedMode()): ?>
+    <?php echo $this->getCmsBlockHtml() ?>
+    <?php echo $this->getProductListHtml() ?>
+
+<?php else: ?>
+    <?php echo $this->getProductListHtml() ?>
+<?php endif; ?>

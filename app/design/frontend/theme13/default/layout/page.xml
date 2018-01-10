@@ -128,7 +128,7 @@
             <block type="cms/block" name="createur">
                 <action method="setBlockId"><block_id>createur</block_id></action>
             </block>
-
+            <block type="core/template" name="articles" template="page/html/articles/articles.phtml"/>
             <block type="core/text_list" name="right" as="right" translate="label">
                 <label>Right Column</label>
             </block>

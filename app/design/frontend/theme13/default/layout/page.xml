@@ -119,7 +119,18 @@
             <block type="core/text_list" name="content" as="content" translate="label">
                 <label>Main Content Area</label>
             </block>
-           
+            
+            <!-- HOME -->
+            <block type="core/template" name="hero" template="page/html/hero.phtml"/>
+            <block type="cms/block" name="mise_en_avant">
+                <action method="setBlockId"><block_id>mise_en_avant</block_id></action>
+            </block>
+            <block type="cms/block" name="createur">
+                <action method="setBlockId"><block_id>createur</block_id></action>
+            </block>
+            <block type="core/template" name="articles" template="page/html/articles/articles.phtml"/>
+
+             <!-- END HOME -->
 
             <block type="core/text_list" name="right" as="right" translate="label">
                 <label>Right Column</label>

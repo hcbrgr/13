@@ -86,6 +86,12 @@ Default layout, loads most of the pages
         </reference>
         <reference name="content">
             <block type="core/template" name="default_home_page" template="cms/default/home.phtml"/>
+              <block type="cms/block" name="mise_en_avant">
+                <action method="setBlockId"><block_id>mise_en_avant</block_id></action>
+            </block>
+            <block type="cms/block" name="createur">
+                <action method="setBlockId"><block_id>createur</block_id></action>
+            </block>
         </reference>
     </cms_index_defaultindex>
 

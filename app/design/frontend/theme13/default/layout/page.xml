@@ -49,6 +49,7 @@
                 <action method="addJs"><script>varien/form.js</script></action>
                 <action method="addJs"><script>mage/translate.js</script></action>
                 <action method="addJs"><script>mage/cookies.js</script></action>
+                <action method="addJs"><script>thme13/scripts.js</script></action>
 
                 <block type="page/js_cookie" name="js_cookies" template="page/js/cookie.phtml"/>
 
@@ -121,12 +122,7 @@
             <block type="core/text_list" name="content" as="content" translate="label">
                 <label>Main Content Area</label>
             </block>
-            <block type="cms/block" name="mise_en_avant">
-                <action method="setBlockId"><block_id>mise_en_avant</block_id></action>
-            </block>
-            <block type="cms/block" name="createur">
-                <action method="setBlockId"><block_id>createur</block_id></action>
-            </block>
+          
 
             <block type="core/text_list" name="right" as="right" translate="label">
                 <label>Right Column</label>
@@ -153,8 +149,6 @@
                 <!--<block type="cms/block" name="footer_social_links">
                     <action method="setBlockId"><block_id>footer_social_links</block_id></action>
                 </block>-->
-               
-                
             </block>
 
             <block type="core/text_list" name="before_body_end" as="before_body_end" translate="label">

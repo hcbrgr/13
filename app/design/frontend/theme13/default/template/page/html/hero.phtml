@@ -4,7 +4,7 @@ $category = Mage::getModel('catalog/category')
     ->getCollection()
     ->addAttributeToSort('created_at', 'desc');
     $collection->getSelect()->limit(1);
-    echo $latestItemId = $collection->getLastItem()->getData();
+    var_deump($collection);
 ?>
 
 

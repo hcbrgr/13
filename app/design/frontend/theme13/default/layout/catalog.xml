@@ -44,7 +44,6 @@ Default layout, loads most of the pages
 
     <default>
         <reference name="root">
-        
             <action method="setTemplate"><template>page/standard.phtml</template></action>
         </reference>
         <!-- Mage_Catalog -->
@@ -72,9 +71,6 @@ Default layout, loads most of the pages
 <!--
 Category default layout
 --> 
-<standard>
-     <action method="setTemplate" block="root"><template>your/template.phtml</template></action>
-</standard>
 
     <catalog_category_default translate="label">
         <label>Catalog Category (Non-Anchor)</label>

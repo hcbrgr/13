@@ -68,7 +68,10 @@ Default layout, loads most of the pages
 
 <!--
 Category default layout
--->
+--> 
+<standard>
+     <action method="setTemplate" block="root"><template>your/template.phtml</template></action>
+</standard>
 
     <catalog_category_default translate="label">
         <label>Catalog Category (Non-Anchor)</label>
@@ -187,11 +190,9 @@ Product view
 -->
 
     <catalog_product_view translate="label">
+        <update handle="standard" />
         <label>Catalog Product View (Any)</label>
         <!-- Mage_Catalog -->
-        <reference name="root">
-            <action method="setTemplate"><template>page/standard.phtml</template></action>
-        </reference>
         <reference name="head">
             <action method="addJs"><script>varien/product.js</script></action>
             <action method="addJs"><script>varien/product_options.js</script></action>

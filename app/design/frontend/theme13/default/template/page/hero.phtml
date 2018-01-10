@@ -1,4 +1,13 @@
 
+<?php 
+$category = Mage::getModel('catalog/category')
+    ->getCollection()
+    ->addAttributeToSort('created_at', 'desc');
+    $collection->getSelect()->limit(1);
+    echo $latestItemId = $collection->getLastItem()->getData();
+?>
+
+
 <div class="full-section home__section home__newcollection">
 <div class="home__section-image"></div>
 <div class="home__section-content">

@@ -159,9 +159,7 @@
                 <!--<block type="cms/block" name="footer_social_links">
                     <action method="setBlockId"><block_id>footer_social_links</block_id></action>
                 </block>-->
-                <block type="cms/block" name="menu_footer">
-                <block type="cms/block" name="social_links">
-                <block type="cms/block" name="copyright">
+             
             </block>
 
             <block type="core/text_list" name="before_body_end" as="before_body_end" translate="label">

@@ -2,12 +2,16 @@
 <?php
 $_helper = Mage::helper('catalog/category');
 $_categories = $_helper->getStoreCategories();
+$lastcateg = 0;
 if (count($_categories) > 0){
     foreach($_categories as $_category){
         $_category = Mage::getModel('catalog/category')->load($_category->getId());
-            var_dump($_category->getData());
+            if ( $lastcateg < $_category->getData('created_at')){
+            $lastcateg =  $_category->getData('created_at');
+            };
         }
 }
+echo  $lastcateg;
 
 ?>
 

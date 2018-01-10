@@ -30,12 +30,6 @@
 
 ?>
 <ul class="header__menu">
-
-         <?php
-$pages = Mage::getModel('cms/page')->getCollection();
-foreach($pages as $page) {
-   ?>    <li><a href="/<?php echo $page->identifier; ?>" class="header__menu-link"><?php echo $page->title; ?></a></li><?php 
-}?>
-
+<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('menu_header')->toHtml();  ?>
 </ul> 
 

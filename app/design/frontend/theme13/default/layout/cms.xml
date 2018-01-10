@@ -75,6 +75,12 @@ Default layout, loads most of the pages
 
     <cms_index_index translate="label">
         <label>CMS Home Page</label>
+           <block type="cms/block" name="mise_en_avant">
+                <action method="setBlockId"><block_id>mise_en_avant</block_id></action>
+            </block>
+            <block type="cms/block" name="createur">
+                <action method="setBlockId"><block_id>createur</block_id></action>
+            </block>
     </cms_index_index>
 
     <cms_index_defaultindex>
@@ -83,12 +89,6 @@ Default layout, loads most of the pages
 
         <reference name="root">
             <action method="setTemplate"><template>page/home.phtml</template></action>
-             <block type="cms/block" name="mise_en_avant">
-                <action method="setBlockId"><block_id>mise_en_avant</block_id></action>
-            </block>
-            <block type="cms/block" name="createur">
-                <action method="setBlockId"><block_id>createur</block_id></action>
-            </block>
         </reference>
         <reference name="content">
             <block type="core/template" name="default_home_page" template="cms/default/home.phtml"/>

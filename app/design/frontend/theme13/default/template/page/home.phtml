@@ -48,21 +48,25 @@
 <div class="page13 home">
 <?php $_helper = Mage::helper('catalog/category');
 
+// ADD IMAGE ATTRIBUTE
+$_helper->addAttributeToSelect('image');
+
+?>
 ?>
 
 <?php $_categories = $_helper->getStoreCategories() ?>
-$data = [];
-<?php if (count($_categories) > 0){ ?>
-        <?php foreach($_categories as $_category){
-                $url = $product->getCategoryUrl();
-                $name = $product->getData('name');
-                $content = array($url, $name);
-				array_push($data, $content);
-            }; ?>
-<?php };
-
-var_dump($data);?>
-
+<?php if (count($_categories) > 0): ?>
+	<ul>
+		<?php foreach($_categories as $_category): ?>
+            
+			<li>
+				<a href="<?php echo $_helper->getCategoryUrl($_category) ?>">
+					<?php var_dump($_category->getData('name')); ?>
+				</a>
+			</li>
+		<?php endforeach; ?>
+	</ul>
+<?php endif; ?>
 
 
 <div class="full-section home__section home__newcollection">
@@ -70,7 +74,7 @@ var_dump($data);?>
 <div class="home__section-content">
 <h2 class="home__section-title title">NOUVELLE<br />COLLECTION</h2>
 <p class="home__section-text text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam rhoncus lacus at gravida finibus. In sit amet imperdiet eros, at porta risus. Curabitur neque nibh, suscipit tempus pellentesque a, convallis sed nisi.</p>
-<a class="home__section-button button button-black" href="">Call to action</a></div>
+<a class="home__section-button button button-black">Call to action</a></div>
 </div>
 <div class="contained-section home__section home__oldcollection">
 <div class="home__section-image"></div>

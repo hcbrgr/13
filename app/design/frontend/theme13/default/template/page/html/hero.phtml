@@ -9,7 +9,7 @@ if (count($_categories) > 0){
             if ( $lastcateg < $_category->getData('created_at')){
                 $lastcateg =  $_category->getData('created_at');
                 $image = $_category->getData('image');
-                $desc = $_category->getData('desc');
+                $desc = $_category->getData('description');
                 $url = $_category->getData('url_path');
             };
         }

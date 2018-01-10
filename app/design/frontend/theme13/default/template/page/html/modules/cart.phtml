@@ -9,9 +9,9 @@ $total = $this->helper('checkout/cart')->getQuote()->getGrandTotal(); //get tota
       <a class="module13__close"></a>
 
       <h3 class="cart__title">Mon panier</h3>
-      <?php if($this->getItemCount()){ ?>
+      
       <ul class="cart__content">
-
+      <?php if($count > 0){ ?>
         <?php foreach ($this->getItems() as $_item): ?>
          <li class="cart__content-product">
             <div class="cart__content-product-image" style="background-image: url('<?php echo $this->helper('catalog/image')->init($_item, 'thumbnail')->resize(210); ?>');"></div>
@@ -37,11 +37,10 @@ $total = $this->helper('checkout/cart')->getQuote()->getGrandTotal(); //get tota
                </div>
             </div>
          </li>
-        <?php endforeach ?>
-        
-
+      <?php endforeach;
+       } else{?> <p>Aucun produit dans le panier <?php } ?>
       </ul>
-        <?php } else{?> <p>Aucun produit dans le panier <?php } ?>
+      
 
       <div class="cart__details">
          <h3 class="cart__details-title">Détails du panier</h3>

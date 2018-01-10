@@ -189,7 +189,9 @@ Product view
     <catalog_product_view translate="label">
         <label>Catalog Product View (Any)</label>
         <!-- Mage_Catalog -->
-     
+        <reference name="root">
+            <action method="setTemplate"><template>page/standard.phtml</template></action>
+        </reference>
         <reference name="head">
             <action method="addJs"><script>varien/product.js</script></action>
             <action method="addJs"><script>varien/product_options.js</script></action>
@@ -382,7 +384,7 @@ SEO Site Map
         <remove name="left"/>
 
         <reference name="root">
-            <action method="setTemplate"><template>page/1column.phtml</template></action>
+            <action method="setTemplate"><template>page/standard.phtml</template></action>
         </reference>
         <reference name="content">
             <block type="page/template_container" name="seo.sitemap.container" template="catalog/seo/sitemap/container.phtml">

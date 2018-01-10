@@ -40,13 +40,9 @@
 <?php /* echo $this->getToolbarHtml() */?>
 
 <?php if(!$_productCollection->count()): ?>
-<p class="note-msg"><?php echo $this->__('There are no products matching the selection.') ?></p>
+<p class="note-msg"><?php echo $this->__('Aucun produit en boutique !.') ?></p>
 <?php else: ?>
-
-  
-   
     <?php $_iterator = 0; ?>
-   
     <?php foreach ($_productCollection as $_product): ?>
     <div class="collection__gallery-single">
          <div class="collection__gallery-single-imgbox">
@@ -57,20 +53,7 @@
       </div>
 
     <?php endforeach; ?>
-    </ol>
-    <script type="text/javascript">decorateList('products-list', 'none-recursive')</script>
 
-</div>
 <?php endif; ?>
-<?php
-// Provides a block where additional page components may be attached, primarily good for in-page JavaScript
-if ($this->getChild('after')) {
-    $_afterChildren = $this->getChild('after')->getSortedChildren();
-    foreach ($_afterChildren as $_afterChildName) {
-        $_afterChild = $this->getChild('after')->getChild($_afterChildName);
-        //set product collection on after blocks
-        $_afterChild->setProductCollection($_productCollection);
-        echo $_afterChild->toHtml();
-    }
-}
-?>
+
+

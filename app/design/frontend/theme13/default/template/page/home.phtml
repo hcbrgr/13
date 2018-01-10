@@ -60,7 +60,15 @@
 			<li>
 				<a href="<?php echo $_helper->getCategoryUrl($_category) ?>">
 					<?php var_dump($_category->getData()); ?>
-                    <?php echo $category->getImageUrl() ?>
+                    
+                    <?php
+                    try { 
+                        echo $category->getImageUrl() ;
+                    }
+                    catch (Exception $e) {
+                        echo 'Caught exception: ',  $e->getMessage(), "\n";
+                    }
+                    ?>
 				</a>
 			</li>
 		<?php endforeach; ?>

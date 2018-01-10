@@ -8,6 +8,8 @@ if (count($_categories) > 0){
         $_category = Mage::getModel('catalog/category')->load($_category->getId());
             if ( $lastcateg < $_category->getData('created_at')){
             $lastcateg =  $_category->getData('created_at');
+            $title = $_category->getData('name');
+            echo $_category->getData();
             };
         }
 }

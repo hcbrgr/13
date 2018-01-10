@@ -11,7 +11,7 @@ $total = $this->helper('checkout/cart')->getQuote()->getGrandTotal(); //get tota
       <h3 class="cart__title">Mon panier</h3>
       <ul class="cart__content">
       <?php if($count > 0){ ?>
-        <?php foreach ($this->getItem() as $_item): ?>
+        <?php foreach ($this->helper('checkout/cart')->getItem() as $_item): ?>
          <li class="cart__content-product">
             <div class="cart__content-product-image" style="background-image: url('<?php echo $this->helper('catalog/image')->init($_item, 'thumbnail')->resize(210); ?>');"></div>
             <div class="cart__content-product-details">

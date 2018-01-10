@@ -383,11 +383,14 @@ input[type="submit"]:hover {
   justify-content: flex-end; }
 
 .cart__popin {
+  position: fixed;
   padding: 45px;
   top: 0;
+  left: 45%;
   width: 55%;
   height: 100%;
-  transform: none; }
+  transform: none;
+  transition: 0.3s; }
 
 .cart__content {
   height: 365px;
@@ -484,12 +487,14 @@ input[type="submit"]:hover {
 
 .cart__pay-total-price {
   font-size: 24px;
-  letter-spacing: 2px; }
+  letter-spacing: 2px;
+  white-space: nowrap; }
 
 .cart__pay-link {
   padding: 15px 20px;
   width: 250px;
-  letter-spacing: 2px; }
+  letter-spacing: 2px;
+  margin-left: 40px; }
 
 /* --------------------------------- PAGES --------------------------------- */
 /* ------------------------------ HOME VARIABLES */

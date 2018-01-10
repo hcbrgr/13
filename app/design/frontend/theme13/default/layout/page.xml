@@ -131,7 +131,9 @@
             <block type="core/template" name="articles" template="page/html/articles/articles.phtml"/>
 
              <!-- END HOME -->
-
+            <block type="core/template" name="module" template="page/html/modules/module.phtml"/>
+            <block type="core/template" name="signlog" template="page/html/modules/signlog.phtml"/>
+            <block type="core/template" name="cart" template="page/html/modules/cart.phtml"/>
             <block type="core/text_list" name="right" as="right" translate="label">
                 <label>Right Column</label>
             </block>

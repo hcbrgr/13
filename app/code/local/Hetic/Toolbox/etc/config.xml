@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<config>
+  <modules>
+    <Hetic_Toolbox>
+      <active>true</active>
+      <codePool>local</codePool>
+      <depends>
+        <Mage_Page />
+      </depends>
+    </Hetic_Toolbox>
+  </modules>
+  <global>
+    <blocks><!-- les classes utilisées pas ce module -->
+      <customclass><!-- utilisé pour appeller la classe de block (<block type="customclass/tools" template="..." />) -->
+        <class>Hetic_Toolbox_Block</class>
+      </customclass>
+    </blocks>
+    <models>
+      <custommodel><!-- urilisé pour lancer la fonction getModel('custommodel/toolmodel') -->
+        <class>Hetic_Toolbox_Model</class>
+      </custommodel>
+    </models>
+    <helpers>
+      <customhelper>
+        <class>Hetic_Toolbox_Helper</class>
+      </customhelper>
+    </helpers>
+  </global>
+</config>

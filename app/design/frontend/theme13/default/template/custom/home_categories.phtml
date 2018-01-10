@@ -1,0 +1,41 @@
+<?php
+$cats = $this->getHomeCategories(); // fonction déclarée dans la classe de block créée
+?>
+
+<div id="home_categories">
+  <h3>Hightlights</h3>
+  <?php $i = 0; ?>
+  <?php if (is_array($cats) && count($cats)) { ?>
+    <?php foreach($cats as $_category) { 
+      $i++;
+      ?>
+      <div class="<?= count($cats) == $i?'last':'' ?>">
+      <?php 
+
+      $imgurl = false;
+      if ($image = $_category['img']) {
+          $imgurl = Mage::getBaseUrl('media').'catalog/category/'.$image;
+      }
+
+      ?>
+        
+        <a class="home-cat" href="<?php echo $_category['url'] ?>">
+            <?php if($imgurl): ?>
+                <img class="categoryHomepage" src="<?php echo $imgurl ?>" alt="" />
+            <?php endif; ?>
+
+            <p><?php echo $_category['name'] ?>
+            <!--<span><?php echo $this->__("Shop"); ?></span>--></p>
+            
+        </a>
+      </div>
+    <?php } ?>
+    <div class="clearfix"></div>
+  <?php } ?>
+</div>
+
+
+
+
+
+

@@ -49,10 +49,10 @@
 <?php $_helper = Mage::helper('catalog/category');
 
 ?>
-?>
+
 
 <?php $_categories = $_helper->getStoreCategories() ?>
-<?php if (count($_categories) > 0): ?>
+<?php /* if (count($_categories) > 0): ?>
 	<ul>
 		<?php foreach($_categories as $_category): ?>
             
@@ -63,7 +63,7 @@
 			</li>
 		<?php endforeach; ?>
 	</ul>
-<?php endif; ?>
+<?php endif; */ ?>
 
 
 <div class="full-section home__section home__newcollection">
@@ -73,8 +73,8 @@
 <p class="home__section-text text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam rhoncus lacus at gravida finibus. In sit amet imperdiet eros, at porta risus. Curabitur neque nibh, suscipit tempus pellentesque a, convallis sed nisi.</p>
 <a class="home__section-button button button-black">Call to action</a></div>
 </div>
-<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('mise_en_avant')->toHtml(); 
-?> 
+<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('mise_en_avant')->toHtml();
+?>
 <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('createur')->toHtml(); ?>
 
 <div class="home__section home__articles">

@@ -29,7 +29,7 @@
     <oauth_root_handle>
         <reference name="root">
             <action method="setTemplate">
-                <template>page/1column.phtml</template>
+                <template>page/standard.phtml</template>
             </action>
         </reference>
         <reference name="head">

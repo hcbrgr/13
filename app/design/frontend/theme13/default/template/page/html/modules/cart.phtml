@@ -150,7 +150,7 @@ $total = $this->helper('checkout/cart')->getQuote()->getGrandTotal(); //get tota
                <b>Total</b> (TTC)
             </p>
             <p class="cart__pay-total-price">
-               <?php= $total ?>
+               <?= $total ?>
             </p>
          </div>
          <a class="cart__pay-link button button-black" href="<?php echo Mage::helper('checkout/cart')->getCartUrl(); ?>">

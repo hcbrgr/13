@@ -7,21 +7,21 @@ if (count($_categories) > 0){
     foreach($_categories as $_category){
         $_category = Mage::getModel('catalog/category')->load($_category->getId());
             if ( $lastcateg < $_category->getData('created_at')){
-            $lastcateg =  $_category->getData('created_at');
-            $title = $_category->getData('name');
-            var_dump($_category->getData());
+                $lastcateg =  $_category->getData('created_at');
+                $image = $_category->getData('image');
+                $desc = $_category->getData('desc');
+                $url = $_category->getData('url_path');
             };
         }
 }
-echo  $lastcateg;
 
 ?>
 
 
 <div class="full-section home__section home__newcollection">
-<div class="home__section-image"></div>
+<div class="home__section-image" style="background-image: url('http://46.20.121.65/media/catalog/category/<?php echo $image ?>')"></div>
 <div class="home__section-content">
 <h2 class="home__section-title title">NOUVELLE<br />COLLECTION</h2>
-<p class="home__section-text text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam rhoncus lacus at gravida finibus. In sit amet imperdiet eros, at porta risus. Curabitur neque nibh, suscipit tempus pellentesque a, convallis sed nisi.</p>
-<a class="home__section-button button button-black">Call to action</a></div>
+<p class="home__section-text text"><?php echo $desc ?></p>
+<a class="home__section-button button button-black" href="/<?php echo $url ?>">Découvrir</a></div>
 </div>

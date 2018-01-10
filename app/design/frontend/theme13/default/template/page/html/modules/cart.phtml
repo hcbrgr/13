@@ -1,4 +1,7 @@
-
+<?php
+$count = $this->helper('checkout/cart')->getSummaryCount();  //get total items in cart
+$total = $this->helper('checkout/cart')->getQuote()->getGrandTotal(); //get total price
+?>
 
 <div class="cart module13">
    <div class="module13__underlay"></div>
@@ -147,10 +150,10 @@
                <b>Total</b> (TTC)
             </p>
             <p class="cart__pay-total-price">
-               613,72 €
+               <?php= $total ?>
             </p>
          </div>
-         <a class="cart__pay-link button button-black">
+         <a class="cart__pay-link button button-black" href="<?php echo Mage::helper('checkout/cart')->getCartUrl(); ?>">
             Accéder au paiement
          </a>
       </div>

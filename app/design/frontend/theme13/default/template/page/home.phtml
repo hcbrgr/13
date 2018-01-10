@@ -58,7 +58,7 @@
             
 			<li>
 				<a href="<?php echo $_helper->getCategoryUrl($_category) ?>">
-					<?php var_dump($_category->getData('name')); ?>
+					<?php var_dump($_category->getData()); ?>
 				</a>
 			</li>
 		<?php endforeach; ?>
@@ -73,6 +73,10 @@
 <p class="home__section-text text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam rhoncus lacus at gravida finibus. In sit amet imperdiet eros, at porta risus. Curabitur neque nibh, suscipit tempus pellentesque a, convallis sed nisi.</p>
 <a class="home__section-button button button-black">Call to action</a></div>
 </div>
+<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('mise_en_avant')->toHtml(); 
+?> 
+<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('createur')->toHtml(); 
+?> 
 <div class="contained-section home__section home__oldcollection">
 <div class="home__section-image"></div>
 <div class="home__section-content">

@@ -50,7 +50,7 @@
     <?php foreach ($_productCollection as $_product): ?>
     <div class="collection__gallery-single">
          <div class="collection__gallery-single-imgbox">
-            <a class="collection__gallery-single-image" style="background-image: url('<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->keepFrame(false)->resize($_imgSize); ?>')" href ="<?php echo $_product->getProductUrl() ?>"></a>
+            <a class="collection__gallery-single-image" style="background-image: url('<?php echo $this->helper('catalog/image')->init($_product)->keepFrame(false)->resize($_imgSize); ?>')" href ="<?php echo $_product->getProductUrl() ?>"></a>
          </div>
          <h3 class="collection__gallery-single-name"><a href ="<?php echo $_product->getProductUrl() ?>" ><?php echo $_helper->productAttribute($_product, $_product->getName() , 'name'); ?></a></h3>
          <p class="collection__gallery-single-price"> <?php echo $this->getPriceHtml($_product, true) ?></p>

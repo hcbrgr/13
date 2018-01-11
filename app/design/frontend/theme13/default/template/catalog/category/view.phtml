@@ -54,7 +54,7 @@
     <div class="collection__filters-content">
         <a class="collection__filters-button text-small">Filtrer</a>
         <form>
-            <select class="collection__filters-single" name="collection" id="collection" onchange="windows.location= '$('#collection option:selected').text()';">
+            <select class="collection__filters-single" name="collection" id="collection" onchange="var link = $('#collection option:selected').text(); $(location).attr('href', link );">
                 <option value="/silk.html'"> Silk</option>
                 <option selected value="/automne-hiver-2018.html'"> Automne-Hiver 2018</option>
             </select>

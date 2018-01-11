@@ -15,14 +15,14 @@ if ($count == null  ){
       <h3 class="cart__title">Mon panier</h3>
       <ul class="cart__content">
       <?php if($count > 0){ ?>
-        <?php var_dump($cart->getAllItems());?>
+    
         <?php foreach ($cart->getAllItems() as $item): ?>
          <li class="cart__content-product">
             <div class="cart__content-product-image" style="background-image: url('<?php $item->getProduct()->getImageUrl(); ?>');"></div>
             <div class="cart__content-product-details">
                <div class="cart__content-product-infos">
                   <h3 class="cart__content-product-title">
-                  <?php $productName = $item->getProduct()->getName(); ?>
+                  <?php  echo $productName = $item->getProduct()->getName(); ?>
                   </h3>
                   <p class="cart__content-product-sc text-small">
                      Taille : M

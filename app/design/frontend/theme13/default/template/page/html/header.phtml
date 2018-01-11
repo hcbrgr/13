@@ -27,6 +27,10 @@
  * @var Mage_Page_Block_Html_Header $this
  */
 $count = $this->helper('checkout/cart')->getSummaryCount();  //get total items in cart
+
+if ($count == null  ){
+      $count == 0;
+}
 ?>
 
 

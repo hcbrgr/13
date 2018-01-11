@@ -2,6 +2,9 @@
 $count = $this->helper('checkout/cart')->getSummaryCount();  //get total items in cart
 $total = $this->helper('checkout/cart')->getQuote()->getGrandTotal(); //get total price
 $cart = Mage::getModel('checkout/cart')->getQuote();
+if ($count == null  ){
+    $count == 0;
+}
 ?>
 
 <div class="cart module13">

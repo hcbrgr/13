@@ -44,7 +44,7 @@ console.log(articles);
 
 for(let i = 0; i < articleList.length; i++){
     let id = articleList[i];
-    let img = articles[id].virtuals.previewImage;
+    let img = articles[id].virtuals.previewImage.imageId;
     let url = "https://medium.com/@1515582298020/"+articleList[i].uniqueSlug;
     let title = articles[id].title;
     let desc = articles[id].content.subtitle;

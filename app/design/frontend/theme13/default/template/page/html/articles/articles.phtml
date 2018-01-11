@@ -35,42 +35,26 @@ $result = str_replace('])}while(1);</x>', "", $result, $resultOK);
 var data = document.getElementById('articles').getAttribute('data-content');
 
 var dataJSON = JSON.parse(data);
-console.log(dataJSON.payload.references.Post);
+var articles = dataJSON.payload.references.Post;
 
+var arrowURL = "http://46.20.121.65/skin/frontend/theme13/default/images/arrow_right_icon.svg";
+var html = ""
+for(let i = 0; i < articles.length; i++){
+    let img = article[i].virtuals.previewImage;
+    let url = "https://medium.com/@1515582298020/"+article[i].uniqueSlug;
+    let title = article[i].title;
+    let desc = article[i].content.subtitle;
+    html += '<div class="home__articles-list-item">';
+    html += '<div class="home__articles-list-image" style="background-image: url("https://cdn-images-1.medium.com/max/1600/'+img+'")"></div>';
+    html +='<div class="home__articles-list-content">';
+    html += '<h3 class="home__articles-list-title">'+title+'</h3>';
+    html += '<p class="home__articles-list-text">'+desc+'</p>';
+    html += '<a class="home__articles-list-button button" href="'+url+'">Lire plus<img class="button-icon" src="'+arrowURL+'" /></a></div></div>'
+}
 
+document.getElementById.innerHTML = html;
 </script>
 
 
-<div class="home__articles-list-item">
-<div class="home__articles-list-image"></div>
-<div class="home__articles-list-content">
-<h3 class="home__articles-list-title">Titre de l'article</h3>
-<p class="home__articles-list-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-<a class="home__articles-list-button button">Lire plus<img class="button-icon" src="<?php echo $this->getSkinUrl('images/arrow_right_icon.svg') ?>" /></a></div>
-</div>
-<div class="home__articles-list-item">
-<div class="home__articles-list-image"></div>
-<div class="home__articles-list-content">
-<h3 class="home__articles-list-title">Titre de l'article</h3>
-<p class="home__articles-list-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-<a class="home__articles-list-button button">Lire plus<img class="button-icon" src="<?php echo $this->getSkinUrl('images/arrow_right_icon.svg') ?>" /></a></div>
-</div>
-<div class="home__articles-list-item">
-<div class="home__articles-list-image"></div>
-<div class="home__articles-list-content">
-<h3 class="home__articles-list-title">Titre de l'article</h3>
-<p class="home__articles-list-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-<a class="home__articles-list-button button">Lire plus<img class="button-icon" src="<?php echo $this->getSkinUrl('images/arrow_right_icon.svg') ?>" /></a></div>
-</div>
-<div class="home__articles-list-item">
-<div class="home__articles-list-image"></div>
-<div class="home__articles-list-content">
-<h3 class="home__articles-list-title">Titre de l'article</h3>
-<p class="home__articles-list-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-<a class="home__articles-list-button button">Lire plus<img class="button-icon" src="<?php echo $this->getSkinUrl('images/arrow_right_icon.svg') ?>" /></a></div>
-</div>
-</div>
-</div>
-<div class="home__articles-nav"><img class="home__articles-nav-arrow" src="<?php echo $this->getSkinUrl('images/arrow_right_icon.svg') ?>" /> <img class="home__articles-nav-arrow" src="<?php echo $this->getSkinUrl('images/next_icon.svg') ?>" /></div>
-</div>
+
 </div>

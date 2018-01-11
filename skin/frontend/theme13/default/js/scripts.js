@@ -51,12 +51,12 @@ $(document).ready(function(){
       $('.module13__overlay').fadeIn(200);
       $('.register').css("display", "flex").hide().fadeIn(200);
    });
-
+   /* SignUp */
    $('.register__signup-link').on('click', function(){
       $('.register').fadeOut(200);
       $('.signup').css("display", "flex").hide().fadeIn(100);
    });
-
+   /* Connect */
    $('.signup__send-connect-link').on('click', function(){
       $('.signup').fadeOut(200);
       $('.register').css("display", "flex").hide().fadeIn(100);
@@ -69,6 +69,18 @@ $(document).ready(function(){
    });
 
 
+   /* SESSION STORAGE */
 
+
+   var subsession = sessionStorage.getItem('clé');
+
+   /* Subscribe */
+   if(subsession !== "true" || subsession == null){
+      setTimeout(function(){
+         $('.module13__overlay').fadeIn(200);
+         $('.subscribe').css("display", "flex").hide().fadeIn(200);
+         sessionStorage.setItem('clé', "true");
+      }, 2000);
+   }
 
 });

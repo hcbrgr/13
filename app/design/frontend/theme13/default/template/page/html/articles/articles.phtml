@@ -48,6 +48,7 @@ $result = str_replace('])}while(1);</x>', "", $result, $resultOK);
                     let url = "https://medium.com/@1515582298020/"+articles[id].uniqueSlug;
                     let title = articles[id].title;
                     let desc = articles[id].content.subtitle;
+                    let desc = desc.substring(0, 80);
                     html += '<div class="home__articles-list-item">';
                     html += '<div class="home__articles-list-image" style="background-image: url('+img+'); background-size: cover;" ></div>';
                     html +='<div class="home__articles-list-content">';

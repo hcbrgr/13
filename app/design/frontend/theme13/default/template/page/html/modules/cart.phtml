@@ -18,7 +18,7 @@ if ($count == null  ){
     
         <?php foreach ($cart->getAllItems() as $item): ?>
          <li class="cart__content-product">
-            <div class="cart__content-product-image" style="background-image: url('<?php echo  $item->getProduct()->getImageUrl(); ?>');"></div>
+            <div class="cart__content-product-image" style="background-image: url('<?php echo  $item->getProduct()->getImageUrl('small_image'); ?>');"></div>
             <div class="cart__content-product-details">
                <div class="cart__content-product-infos">
                   <h3 class="cart__content-product-title">
@@ -36,7 +36,7 @@ if ($count == null  ){
                      supprimer
                   </a>
                   <p class="cart__content-product-cost">
-                     <b> <?php $productPrice = $item->getProduct()->getPrice(); ?></b> TTC
+                     <b> <?php echo $productPrice = $item->getProduct()->getPrice(); ?></b>€ TTC
                   </p>
                </div>
             </div>
@@ -55,7 +55,7 @@ if ($count == null  ){
                      Total du panier (HT)
                   </p>
                   <p class="cart__details-totals-price">
-                  <?= $total ?>
+                  <?= $total -12 ?> €
                   </p>
                </li>
                <li>
@@ -71,7 +71,7 @@ if ($count == null  ){
                      TVA
                   </p>
                   <p class="cart__details-totals-price">
-                  <?= $total ?>
+                  <?= $total ?>€
                   </p>
                </li>
             </ul>
@@ -85,7 +85,7 @@ if ($count == null  ){
                <b>Total</b> (TTC)
             </p>
             <p class="cart__pay-total-price">
-               <?= $total ?>
+               <?= $total ?> €
             </p>
          </div>
          <a class="cart__pay-link button button-black" href="<?php echo Mage::helper('checkout/cart')->getCartUrl(); ?>">

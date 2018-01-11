@@ -55,8 +55,8 @@
         <a class="collection__filters-button text-small">Filtrer</a>
         <form>
             <select class="collection__filters-single" name="collection">
-                <?php $_helper = Mage::helper('catalog/category');
-       $_categoris = $_helper->getStoreCategories();
+                <?php $_helpr = Mage::helper('catalog/category');
+       $_categoris = $_helpr->getStoreCategories();
        if (count($_categoris) > 0){
         foreach($_categoris as $_categori){
             $_categori = Mage::getModel('catalog/category')->load($_categori->getId());

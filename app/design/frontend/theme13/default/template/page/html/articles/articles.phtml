@@ -44,12 +44,12 @@ console.log(articles);
 
 for(let i = 0; i < articleList.length; i++){
     let id = articleList[i];
-    let img = articles[id].virtuals.previewImage.imageId;
+    let img = "https://cdn-images-1.medium.com/max/1600/"+articles[id].virtuals.previewImage.imageId;
     let url = "https://medium.com/@1515582298020/"+articleList[i].uniqueSlug;
     let title = articles[id].title;
     let desc = articles[id].content.subtitle;
     html += '<div class="home__articles-list-item">';
-    html += '<div class="home__articles-list-image" style="background-image: url("https://cdn-images-1.medium.com/max/1600/'+img+'")"></div>';
+    html += '<div class="home__articles-list-image" style="background-image: url("'+img+'")"></div>';
     html +='<div class="home__articles-list-content">';
     html += '<h3 class="home__articles-list-title">'+title+'</h3>';
     html += '<p class="home__articles-list-text">'+desc+'</p>';

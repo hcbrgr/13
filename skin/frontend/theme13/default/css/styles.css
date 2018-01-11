@@ -589,6 +589,7 @@ input[type="text"].subscribe__content-email {
 .cart__content-product-image {
   width: 80px;
   height: 80px;
+  background-size: cover;
   background-color: #eeeeee; }
 
 .cart__content-product-details {

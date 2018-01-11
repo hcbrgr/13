@@ -55,16 +55,10 @@
         <a class="collection__filters-button text-small">Filtrer</a>
         <form>
             <select class="collection__filters-single" name="collection">
-                <?php $_helpr = Mage::helper('catalog/category');
-       $_categoris = $_helpr->getStoreCategories();
-       if (count($_categoris) > 0){
-        foreach($_categoris as $_categori){
-            $_categori = Mage::getModel('catalog/category')->load($_categori->getId());
-            ?>
-                <option <?php if($_helper->categoryAttribute($_category, $_category->getName(), 'name') == $_categori->getData('name') ){?> selected <?php }?>)onclick="windows.location='/<?php echo $_categori->getData('url_path'); ?>'"> <?php echo $_categoro->getData('name'); ?></option>
-                <?php
-                }
-            } ?>
+
+                <option  onclick="windows.location='/silk.html'"> Silk</option>
+                <option selected onclick="windows.location='/automne-hiver-2018.html'"> Automne-Hiver 2018</option>
+
             </select>
             <select class="collection__filters-single" name="color">
                 <option value="" disabled selected>Couleur</option>

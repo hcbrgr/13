@@ -3,7 +3,7 @@ $count = $this->helper('checkout/cart')->getSummaryCount();  //get total items i
 $total = $this->helper('checkout/cart')->getQuote()->getGrandTotal(); //get total price
 $cart = Mage::getModel('checkout/cart')->getQuote();
 if ($count == null  ){
-    $count == 0;
+    $count = 0;
 }
 ?>
 

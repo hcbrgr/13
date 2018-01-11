@@ -61,7 +61,7 @@
         foreach($_categoris as $_categori){
             $_categori = Mage::getModel('catalog/category')->load($_categori->getId());
             ?>
-                <option <?php if($_helper->categoryAttribute($_category, $_category->getName(), 'name') == $_categor->getData('name') ){?> selected <?php }?>)onclick="windows.location='/<?php echo $_categori->getData('url_path'); ?>'"> <?php echo $_categoro->getData('name'); ?></option>
+                <option <?php if($_helper->categoryAttribute($_category, $_category->getName(), 'name') == $_categori->getData('name') ){?> selected <?php }?>)onclick="windows.location='/<?php echo $_categori->getData('url_path'); ?>'"> <?php echo $_categoro->getData('name'); ?></option>
                 <?php
                 }
             } ?>

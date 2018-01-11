@@ -140,6 +140,7 @@ a:hover {
 
 .header__language {
   width: 30%;
+  z-index: 99;
   text-align: left;
   display: flex; }
 
@@ -169,6 +170,7 @@ a:hover {
   width: 30%;
   text-align: right;
   display: flex;
+  z-index: 99;
   justify-content: flex-end; }
 
 .header__icons li {

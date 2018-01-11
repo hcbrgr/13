@@ -40,7 +40,7 @@ var articles = dataJSON.payload.references.Post;
 var arrowURL = "http://46.20.121.65/skin/frontend/theme13/default/images/arrow_right_icon.svg";
 var html = ""
 console.log(dataJSON.payload.references.Post);
-for(let i = 0; i < articles.length; i++){
+for(let i = 0; i < 4; i++){
     let img = article[i].virtuals.previewImage;
     let url = "https://medium.com/@1515582298020/"+article[i].uniqueSlug;
     let title = article[i].title;

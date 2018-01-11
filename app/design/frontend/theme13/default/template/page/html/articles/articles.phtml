@@ -29,39 +29,44 @@ $result = str_replace('])}while(1);</x>', "", $result, $resultOK);
 ?>
 
 
-<div class="home__articles-list" id="articles" data-content='<?php echo $result ?>'>
-            <script type="text/javascript">
+    <div class="home__articles-list" id="articles" data-content='<?php echo $result ?>'>
+                <script type="text/javascript">
 
-            var data = document.getElementById('articles').getAttribute('data-content');
+                var data = document.getElementById('articles').getAttribute('data-content');
 
-            var dataJSON = JSON.parse(data);
-            var articles = dataJSON.payload.references.Post;
-            articleList = [];
-            for(var k in articles) articleList.push(k);
-            var arrowURL = "http://46.20.121.65/skin/frontend/theme13/default/images/arrow_right_icon.svg";
-            var html = ""
-            console.log(articles);
+                var dataJSON = JSON.parse(data);
+                var articles = dataJSON.payload.references.Post;
+                articleList = [];
+                for(var k in articles) articleList.push(k);
+                var arrowURL = "http://46.20.121.65/skin/frontend/theme13/default/images/arrow_right_icon.svg";
+                var html = ""
+                console.log(articles);
 
-            for(let i = 0; i < articleList.length; i++){
-                let id = articleList[i];
-                let img = "'"+"https://cdn-images-1.medium.com/max/1600/"+articles[id].virtuals.previewImage.imageId+"'";
-                let url = "https://medium.com/@1515582298020/"+articles[id].uniqueSlug;
-                let title = articles[id].title;
-                let desc = articles[id].content.subtitle;
-                html += '<div class="home__articles-list-item">';
-                html += '<div class="home__articles-list-image" style="background-image: url('+img+'); background-size: cover;" ></div>';
-                html +='<div class="home__articles-list-content">';
-                html += '<h3 class="home__articles-list-title">'+title+'</h3>';
-                html += '<p class="home__articles-list-text">'+desc+'</p>';
-                html += '<a class="home__articles-list-button button" href="'+url+'">Lire plus<img class="button-icon" src="'+arrowURL+'" /></a></div></div>'
-            }
-            console.log(html);
+                for(let i = 0; i < articleList.length; i++){
+                    let id = articleList[i];
+                    let img = "'"+"https://cdn-images-1.medium.com/max/1600/"+articles[id].virtuals.previewImage.imageId+"'";
+                    let url = "https://medium.com/@1515582298020/"+articles[id].uniqueSlug;
+                    let title = articles[id].title;
+                    let desc = articles[id].content.subtitle;
+                    html += '<div class="home__articles-list-item">';
+                    html += '<div class="home__articles-list-image" style="background-image: url('+img+'); background-size: cover;" ></div>';
+                    html +='<div class="home__articles-list-content">';
+                    html += '<h3 class="home__articles-list-title">'+title+'</h3>';
+                    html += '<p class="home__articles-list-text">'+desc+'</p>';
+                    html += '<a class="home__articles-list-button button" href="'+url+'">Lire plus<img class="button-icon" src="'+arrowURL+'" /></a></div></div>'
+                }
+                console.log(html);
 
-            document.getElementById('articles').innerHTML = html;
-            </script>
+                document.getElementById('articles').innerHTML = html;
+                </script>
 
 
-        </div>
-</div>
+            </div>
     </div>
+
+ </div>
+    <div class="home__articles-nav">
+               <img class="home__articles-nav-arrow articles__arrow-prev" src="<?php echo $this->getSkinUrl('images/previous_icon.svg') ?>" />
+               <img class="home__articles-nav-arrow articles__arrow-next" src="<?php echo $this->getSkinUrl('images/next_icon.svg') ?>" />
+            </div>
         </div>

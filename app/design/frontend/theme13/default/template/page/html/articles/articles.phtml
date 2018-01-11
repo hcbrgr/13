@@ -24,13 +24,23 @@ $result=curl_exec($ch);
 curl_close($ch);
 
 $result = str_replace('])}while(1);</x>', "", $result, $resultOK);
-
-
+// Will dump a beauty json :3
 
 ?>
 
 
-<div class="home__articles-list" data-content="<?php echo $result ?>">
+<div class="home__articles-list" id="articles" data-content="<?php echo $result ?>">
+<script type="text/javascript">
+
+var data = document.getElementById('articles').getAttribute('data-content');
+
+var dataJSON = JSON.parse(data);
+
+
+console.log(dataJSON);
+</script>
+
+
 <div class="home__articles-list-item">
 <div class="home__articles-list-image"></div>
 <div class="home__articles-list-content">

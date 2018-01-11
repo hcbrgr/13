@@ -1,3 +1,4 @@
+/* CSS BY TEAM 13 */
 /* RESET CSS */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -128,10 +129,10 @@ a:hover {
   .header13 #nav {
     height: 44px;
     position: absolute;
-    width: 100%;
     left: 50%;
     transform: translateX(-50%);
-    bottom: 0; }
+    bottom: 0;
+    width: 100%; }
 
 .header__content {
   display: flex;
@@ -307,7 +308,11 @@ a:hover {
   font-family: 'apercu-medium'; }
 
 .button .button-icon {
-  float: right; }
+  float: right;
+  transition: 0.2s; }
+
+.button:hover > .button-icon {
+  margin-right: -4px; }
 
 .button-black {
   background-color: #000000;
@@ -315,6 +320,9 @@ a:hover {
   color: #ffffff;
   width: auto;
   padding: 16px 64px; }
+
+.button-black:hover {
+  background-color: #333333; }
 
 label {
   position: relative;
@@ -343,7 +351,7 @@ select, textarea, input[type="text"] {
   width: 250px;
   background-color: #ffffff;
   border: 1px solid #000000;
-  border-width: 0 0 2px 0;
+  border-width: 0 0 1px 0;
   padding: 10px 10px;
   text-transform: uppercase;
   font-size: 12px;
@@ -367,12 +375,16 @@ input[type="submit"], .submit-white {
   font-family: 'apercu-medium'; }
 
 input[type="submit"]:hover {
-  cursor: pointer; }
+  cursor: pointer;
+  background-color: #333333; }
 
 .submit-white {
   background-color: #ffffff;
   color: #000000;
-  border: 2px solid #000000; }
+  border: 1px solid #000000; }
+
+.submit-white:hover {
+  background-color: #fafafa; }
 
 /* Nav sticky */
 .nav-sticky.header13 {
@@ -589,8 +601,8 @@ input[type="text"].subscribe__content-email {
 .cart__content-product-image {
   width: 80px;
   height: 80px;
-  background-size: cover;
-  background-color: #eeeeee; }
+  background-color: #eeeeee;
+  background-size: cover; }
 
 .cart__content-product-details {
   display: flex;
@@ -806,6 +818,9 @@ input[type="text"].subscribe__content-email {
 .home__articles-nav-arrow {
   display: inline-block;
   padding: 0 10px; }
+
+.home__articles-nav-arrow:hover {
+  cursor: pointer; }
 
 /* ---------------------------------------------------------------------- */
 /* ------------------------------ PRODUCT VARIABLES */
@@ -1152,6 +1167,9 @@ input[type="text"].subscribe__content-email {
 .about__instagram-nav-arrow {
   display: inline-block;
   padding: 0 10px; }
+
+.about__instagram-nav-arrow:hover {
+  cursor: pointer; }
 
 /* ------------------------------ HOME VARIABLES */
 /* ------------------------------ HOME */

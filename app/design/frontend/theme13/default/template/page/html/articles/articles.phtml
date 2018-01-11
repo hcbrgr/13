@@ -36,15 +36,17 @@ var data = document.getElementById('articles').getAttribute('data-content');
 
 var dataJSON = JSON.parse(data);
 var articles = dataJSON.payload.references.Post;
-
+articleList = [];
+for(var k in articles) articleList.push(k);
 var arrowURL = "http://46.20.121.65/skin/frontend/theme13/default/images/arrow_right_icon.svg";
 var html = ""
 console.log(dataJSON.payload.references.Post);
-for(let i = 0; i < 4; i++){
-    let img = Object.keys(articles)[i].virtuals.previewImage;
-    let url = "https://medium.com/@1515582298020/"+Object.keys(articles)[i].uniqueSlug;
-    let title = Object.keys(articles)[i].title;
-    let desc = Object.keys(articles)[i].content.subtitle;
+
+for(let i = 0; i < articleList.length; i++){
+    let img = articleList[i].virtuals.previewImage;
+    let url = "https://medium.com/@1515582298020/"+articleList[i].uniqueSlug;
+    let title = articleList[i].title;
+    let desc = articleList[i].content.subtitle;
     html += '<div class="home__articles-list-item">';
     html += '<div class="home__articles-list-image" style="background-image: url("https://cdn-images-1.medium.com/max/1600/'+img+'")"></div>';
     html +='<div class="home__articles-list-content">';

@@ -74,7 +74,7 @@ if (count($_categories) > 0){
        if (count($_categoris) > 0){
         foreach($_categoris as $_category){
             $_category = Mage::getModel('catalog/category')->load($_category->getId());
-                    ?> <li><a class="header__submenu-link" href="<?php $_category->getData('url_path'); ?>"><?php $_category->getData('name'); ?></a></li><?php 
+                    ?> <li><a class="header__submenu-link" href="<?php echo $_category->getData('url_path'); ?>"><?php echo $_category->getData('name'); ?></a></li><?php 
             }
     }
     ?>

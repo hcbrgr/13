@@ -39,7 +39,7 @@
 <div class="page13 product">
 
     <div class="product__back">
-    <a class="product__back-link"><img src="<?php echo $this->getSkinUrl('images/previous_icon.svg') ?>" /> Retour</a>
+    <a class="product__back-link" href="/"><img src="<?php echo $this->getSkinUrl('images/previous_icon.svg') ?>" /> Retour</a>
     </div>
     <?php echo $this->getChildHtml('media') ?>
 
@@ -60,7 +60,7 @@
         <a class="product__infos-description-more">Plus de détails +</a>
     </div>
     <form action="<?php echo $this->getSubmitUrl($_product, array('_secure' => $this->_isSecure())) ?>" method="post" class="product__infos-options" id="product_addtocart_form">
-    <?php var_dump($_product->getAttributeCode()); ?>   
+  
     <select name="color">
             <option value="" disabled selected>Choix de la couleur</option>
             <option value="Rouge">Rouge</option>
@@ -72,7 +72,7 @@
             <option value="M">M</option>
             <option value="L">L</option>
         </select>
-        <input class="" type="submit" value="<?php $this->__('Ajouter au panier'); ?>" onclick="productAddToCartForm.submit(this)">
+        <input class="" type="submit" value="Ajouter au Panier" onclick="productAddToCartForm.submit(this)">
     </form>
     </div>
     <script type="text/javascript">

@@ -125,6 +125,8 @@ a:hover {
   display: flex;
   flex-direction: column;
   justify-content: space-between; }
+  .header13 #nav {
+    height: 44px; }
 
 .header__content {
   display: flex;
@@ -306,8 +308,8 @@ a:hover {
   background-color: #000000;
   text-align: center;
   color: #ffffff;
-  width: 190px;
-  padding: 10px 15px; }
+  width: auto;
+  padding: 16px 64px; }
 
 label {
   position: relative;
@@ -356,7 +358,8 @@ input[type="submit"], .submit-white {
   font-size: 12px;
   display: inline-block;
   text-align: center;
-  letter-spacing: 1px; }
+  letter-spacing: 2px;
+  font-family: 'apercu-medium'; }
 
 input[type="submit"]:hover {
   cursor: pointer; }
@@ -686,7 +689,7 @@ input[type="text"].subscribe__content-email {
     top: 150px;
     right: 0px;
     width: 55%;
-    padding: 40px 20px 40px 80px;
+    padding: 40px 80px 40px 80px;
     background-color: #ffffff;
     transition: 0.2s; }
   .full-section .home__section-content:hover {
@@ -1023,7 +1026,7 @@ input[type="text"].subscribe__content-email {
     top: 120px;
     right: 0px;
     width: 60%;
-    padding: 40px 20px 80px 80px;
+    padding: 40px 100px 80px 80px;
     background-color: #ffffff;
     transition: 0.2s; }
 

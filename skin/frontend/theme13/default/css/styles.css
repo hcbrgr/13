@@ -43,27 +43,53 @@ table {
   border-spacing: 0; }
 
 /* END RESET CSS */
+/* FONTS */
+@font-face {
+  font-family: 'apercu-light';
+  src: url("../fonts/apercu-light-webfont.woff2") format("woff2"), url("../fonts/apercu-light-webfont.woff") format("woff"), url("../fonts/apercu-light-webfont.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'butler';
+  src: url("../fonts/butler-bold-webfont.woff2") format("woff2"), url("../fonts/butler-bold-webfont.woff") format("woff"), url("../fonts/butler-bold-webfont.otf") format("truetype");
+  font-weight: bold;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'butler';
+  src: url("../fonts/butler-regular-webfont.woff2") format("woff2"), url("../fonts/butler-regular-webfont.woff") format("woff"), url("../fonts/butler-regular-webfont.otf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'butler';
+  src: url("../fonts/butler-light-webfont.woff2") format("woff2"), url("../fonts/butler-light-webfont.woff") format("woff"), url("../fonts/butler-light-webfont.otf") format("truetype");
+  font-weight: lighter;
+  font-style: normal; }
+
+/* END FONTS */
 * {
   box-sizing: border-box; }
 
 body, html {
   margin: 0;
   padding: 0;
-  font-family: Apercu Light; }
+  font-family: 'apercu-light'; }
 
 /* ------------------------------ GLOBAL VARIABLES */
 /* ------------------------------ GLOBAL */
 h1 {
   margin: 20px 0 40px 0;
-  font-family: butler; }
+  font-family: 'butler'; }
 
 h2 {
   margin: 20px 0 40px 0;
-  font-family: butler; }
+  font-family: 'butler'; }
 
 h3 {
   margin: 0 0 20px 0;
-  font-family: butler;
+  font-family: 'butler';
   font-size: 24px; }
 
 ul {
@@ -105,7 +131,15 @@ a:hover {
 
 .header__language li {
   list-style-type: none;
-  padding: 0 2px; }
+  padding: 0 2px;
+  margin-right: 12px;
+  position: relative; }
+
+.header__language li:first-of-type::after {
+  content: '/';
+  position: absolute;
+  top: 0;
+  right: -10px; }
 
 .header__language-single.active {
   border-bottom: 1px solid #000000; }
@@ -158,10 +192,10 @@ a:hover {
   padding: 5px 20px 20px 20px;
   text-transform: uppercase;
   display: block;
-  border-bottom: 5px solid #ffffff; }
+  border-bottom: 5px solid transparent; }
 
 .header__menu-link:hover {
-  border-bottom: 5px solid #000000; }
+  border-bottom: 5px solid black; }
 
 .header__submenu {
   display: flex;
@@ -177,13 +211,13 @@ a:hover {
   color: #ffffff;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-width: 0;
-  transition: 0.3s; }
+  transition: 0.4s ease; }
 
 .header__submenu-newest {
-  padding: 0 50px; }
+  padding: 40px 50px; }
 
 .header__submenu-all {
-  padding: 0 50px;
+  padding: 40px 50px;
   width: 400px; }
 
 .header__submenu-title {
@@ -211,14 +245,12 @@ a:hover {
 
 /* Showing the submenu */
 .header__menu-link-coll:hover + .header__submenu-coll {
-  height: auto;
-  padding: 30px 40px 40px 40px;
+  height: 150px;
   color: #000000;
   border-width: 1px 0; }
 
 .header__submenu-coll:hover {
-  height: auto;
-  padding: 30px 40px 40px 40px;
+  height: 150px;
   color: #000000;
   border-width: 1px 0; }
 
@@ -231,7 +263,7 @@ a:hover {
   transition: 0.3s; }
 
 .title {
-  font-family: Butler;
+  font-family: 'butler';
   text-transform: uppercase;
   letter-spacing: 5px;
   font-size: 50px;
@@ -311,7 +343,10 @@ input[type="submit"]:hover {
   display: none; }
 
 .nav-sticky .header__menu {
-  margin-top: -22px; }
+  margin-top: -10px; }
+
+.nav-sticky .header__menu-link {
+  padding-bottom: 23px; }
 
 .nav-sticky.page13 {
   margin-top: 75px; }
@@ -402,6 +437,31 @@ input[type="submit"]:hover {
 
 .module13__popin input[type="text"], .module13__popin select {
   width: 230px; }
+
+/* ------------------------------ SUBSCRIBE */
+.subscribe {
+  display: none; }
+
+.subscribe__popin {
+  padding: 40px 60px;
+  display: flex; }
+
+.subscribe__logo {
+  width: 25px;
+  margin-right: 35px; }
+
+.subscribe__content {
+  max-width: 350px;
+  padding: 0 45px; }
+
+.subscribe__content-text {
+  margin-bottom: 20px;
+  line-height: 23px; }
+
+input[type="text"].subscribe__content-email {
+  margin: 0;
+  margin-bottom: 10px;
+  width: 100%; }
 
 /* ------------------------------ REGISTER */
 .register {
@@ -561,7 +621,7 @@ input[type="submit"]:hover {
 
 .cart__pay-total-label {
   font-size: 14px;
-  font-family: butler; }
+  font-family: 'butler'; }
 
 .cart__pay-total-label b {
   font-size: 24px; }
@@ -669,7 +729,7 @@ input[type="submit"]:hover {
 .home__articles-list-item {
   width: 270px;
   height: 400px;
-  border: 1px solid rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(0, 0, 0, 0.1);
   margin: 0 15px; }
 
 .home__articles-list-image {
@@ -728,7 +788,8 @@ input[type="submit"]:hover {
   padding-left: 200px; }
 
 .product__image img {
-  width: 100%; }
+  width: 100%;
+  margin-top: -3px; }
 
 .product__infos {
   position: fixed;
@@ -863,7 +924,7 @@ input[type="submit"]:hover {
 
 .collection__gallery-single-imgbox {
   width: 200px;
-  height: 320px;
+  height: 300px;
   background-color: #000000; }
 
 .collection__gallery-single-image {
@@ -882,3 +943,139 @@ input[type="submit"]:hover {
 
 .collection__gallery-single-name {
   margin: 20px 0 10px 0; }
+
+/* ------------------------------ HOME VARIABLES */
+/* ------------------------------ HOME */
+.full-section-about {
+  width: 100%;
+  position: relative;
+  padding-bottom: 50px; }
+  .full-section-about .about__section-image {
+    width: 100%;
+    height: 400px;
+    background-size: cover;
+    background-color: #eeeeee; }
+  .full-section-about .about__section-content {
+    position: absolute;
+    top: 120px;
+    right: 0px;
+    width: 60%;
+    padding: 40px 20px 40px 80px;
+    background-color: #ffffff;
+    transition: 0.2s; }
+
+.contained-section-about {
+  width: 960px;
+  margin: 0 auto;
+  position: relative;
+  padding: 50px 0; }
+  .contained-section-about .about__section-image {
+    display: inline-block;
+    width: 50%;
+    height: 430px;
+    background-size: cover;
+    background-color: #eeeeee; }
+  .contained-section-about .about__section-content {
+    position: absolute;
+    top: 125px;
+    right: 0;
+    width: 62%;
+    padding: 40px;
+    padding-left: 80px;
+    background-color: #ffffff;
+    transition-duration: 0.2s; }
+  .contained-section-about .about__section-title {
+    text-transform: initial; }
+
+.about__owner {
+  text-align: right; }
+  .about__owner .about__section-content {
+    position: absolute;
+    left: 0;
+    right: auto;
+    padding: 40px;
+    padding-right: 80px;
+    text-align: left; }
+
+.about__owner-center .about__section-content {
+  position: static;
+  width: 100%;
+  padding: 0 160px; }
+
+.about__owner-center .about__section-quote {
+  margin-top: 50px;
+  margin-left: 160px;
+  padding-left: 30px;
+  border-left: 4px solid #000000;
+  font-weight: bold;
+  line-height: 24px; }
+
+.about__instagram {
+  position: relative;
+  width: 1060px;
+  margin: 0 auto;
+  padding: 100px 0;
+  margin-top: 50px;
+  white-space: nowrap; }
+  .about__instagram .about__instagram-content {
+    display: inline-block;
+    vertical-align: top;
+    width: 440px;
+    margin-right: 40px;
+    white-space: initial;
+    padding: 40px;
+    transition: 0.2s; }
+  .about__instagram .home_articles-text {
+    width: 400px; }
+
+.about__instagram-list-container {
+  display: inline-block;
+  position: relative;
+  height: 400px;
+  width: 1600px;
+  overflow: hidden;
+  white-space: initial; }
+
+.about__instagram-list {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  transition: 0.4s ease; }
+
+.about__instagram-list-item {
+  width: 270px;
+  height: 400px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  margin: 0 15px; }
+
+.about__instagram-list-image {
+  width: 100%;
+  height: 170px;
+  background-color: #eeeeee; }
+
+.about__instagram-list-content {
+  height: 230px;
+  padding: 0 30px;
+  display: flex;
+  flex-direction: column; }
+
+.about__instagram-list-title {
+  margin: 20px 0; }
+
+.about__instagram-list-text {
+  flex-grow: 1; }
+
+.about__instagram-list-button {
+  width: 150px;
+  align-self: flex-end;
+  margin-bottom: 20px; }
+
+.about__instagram-nav {
+  position: absolute;
+  right: 0;
+  bottom: 30px; }
+
+.about__instagram-nav-arrow {
+  display: inline-block;
+  padding: 0 10px; }

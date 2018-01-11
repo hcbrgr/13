@@ -39,6 +39,14 @@ $(document).ready(function(){
       $('.cart__popin').css("left", "100%");
       $('.cart').delay(300).hide(0);
    });
+   /* Escape Closing */
+   $(document).keyup(function(e){
+     if (e.keyCode == 27) { // escape key maps to keycode `27`
+         $('.module13__overlay').fadeOut(200);
+         $('.module13').fadeOut(200);
+      }
+   });
+
    /* Cart */
    $('.header__icons-cart').on('click', function(){
       $('.module13__overlay').fadeIn(200);

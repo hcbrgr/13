@@ -18,17 +18,17 @@ if ($count == null  ){
     
         <?php foreach ($cart->getAllItems() as $item): ?>
          <li class="cart__content-product">
-            <div class="cart__content-product-image" style="background-image: url('<?php echo  $item->getProduct()->getImageUrl('small_image'); ?>');"></div>
+            <div class="cart__content-product-image" style="background-image: url('<?php echo $this->helper('catalog/image')->init($item->getProduct(), 'small_image')->resize(50,50);?> ' );"></div>
             <div class="cart__content-product-details">
                <div class="cart__content-product-infos">
                   <h3 class="cart__content-product-title">
                   <?php  echo $productName = $item->getProduct()->getName(); ?>
                   </h3>
                   <p class="cart__content-product-sc text-small">
-                     Taille : M
+                     Quantité :  <?php  echo $productName = $item->getProduct()->getQty(); ?>
                   </p>
                   <p class="cart__content-product-sc text-small">
-                     Colori: Azure
+                     Taille: M
                   </p>
                </div>
                <div class="cart__content-product-price">

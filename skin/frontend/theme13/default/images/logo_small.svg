@@ -1,0 +1,18 @@
+<svg width="28" height="45" viewBox="0 0 28 45" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>Component</title>
+<desc>Created using Figma</desc>
+<g id="Canvas" transform="translate(421 -379)">
+<g id="Component">
+<g id="Rectangle">
+<use xlink:href="#path0_fill" transform="matrix(0.707107 0.707107 -0.707107 0.707107 -407.929 393)"/>
+</g>
+<g id="S">
+<use xlink:href="#path1_fill" transform="translate(-421 379)"/>
+</g>
+</g>
+</g>
+<defs>
+<path id="path0_fill" fill-rule="evenodd" d="M 0 0L 10 0L 10 10L 0 10L 0 0Z"/>
+<path id="path1_fill" fill-rule="evenodd" d="M 26.2368 39.6433C 26.2368 39.6433 23.6972 44.7225 14.2819 44.7225C 5.17637 44.7225 0.654557 41.3776 0.654557 41.3776L 0.654557 29.4847L 1.27398 29.4847C 1.5837 38.9619 3.99946 44.0412 14.2819 44.0412C 25.0599 44.0412 25.9271 32.8296 18.8037 27.8742L 8.21155 20.8747C 3.75169 17.7775 -3.062 12.5124 1.52175 4.83152C 1.52175 4.83152 4.55694 0 12.6095 0C 20.7859 0 25.8652 2.9113 25.8652 2.9113L 25.8652 13.3177L 25.1219 13.3177C 24.8741 5.76066 23.1397 0.681368 12.6095 0.681368C 5.91968 0.681368 -0.522351 9.53916 9.45041 15.9812L 20.0426 22.9188C 28.4048 28.4316 28.7765 35.3692 26.2368 39.6433Z"/>
+</defs>
+</svg>

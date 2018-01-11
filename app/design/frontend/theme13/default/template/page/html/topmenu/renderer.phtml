@@ -29,7 +29,60 @@
 /** @var string $childrenWrapClass */
 
 ?>
+<?php
 
-<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('menu_header')->toHtml();  ?>
+$_helper = Mage::helper('catalog/category');
+$_categories = $_helper->getStoreCategories();
+$lastcateg = 0;
+if (count($_categories) > 0){
+    foreach($_categories as $_category){
+        $_category = Mage::getModel('catalog/category')->load($_category->getId());
+            if ( $lastcateg < $_category->getData('created_at')){
+                $lastcateg =  $_category->getData('created_at');
+                $image = $_category->getData('image');
+                $name = $_category->getData('name');
+                $desc = $_category->getData('description');
+                $url = $_category->getData('url_path');
+            };
+        }
+}
+
+?>
 
 
+<ul class="header__menu">
+<li><a class="header__menu-link" href="/automne-hiver-2018.html">Collections</a>
+<div class="header__submenu header__submenu-coll">
+
+<div class="header__submenu-newest">
+   <p class="header__submenu-title">
+      Nouveauté
+   </p>
+   <ul class="header__submenu-menu">
+      <li><a class="header__submenu-link" href="/<?= $url ?>"><?= $name ?></a></li>
+
+   </ul>
+</div>
+<div class="header__submenu-all">
+   <p class="header__submenu-title">
+      Toutes les collections
+   </p>
+   <ul class="header__submenu-menu">
+       <?php 
+       if (count($_categories) > 0){
+        foreach($_categories as $_category){
+            $_category = Mage::getModel('catalog/category')->load($_category->getId());
+                    ?> <li><a class="header__submenu-link" href="<?php $_category->getData('url_path'); ?>"><?php $_category->getData('name'); ?></a></li><?php 
+            }
+    }
+    ?>
+   </ul>
+</div>
+
+</div>
+</li>
+<li><a class="header__menu-link" href="/">Créateurs</a></li>
+<li><a class="header__menu-link" href="/blog">Blog</a></li>
+<li><a class="header__menu-link" href="/la-marque">La Marque</a></li>
+<li><a class="header__menu-link" href="/contact">Contact</a></li>
+</ul>

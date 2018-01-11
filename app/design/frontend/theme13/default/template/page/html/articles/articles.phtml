@@ -35,7 +35,9 @@ $result = str_replace('])}while(1);</x>', "", $result, $resultOK);
 var data = document.getElementById('articles').getAttribute('data-content');
 
 var dataJSON = JSON.parse(data);
-console.log(dataJSON);
+console.log(dataJSON.payload.references.Post);
+
+
 </script>
 
 

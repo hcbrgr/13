@@ -41,10 +41,10 @@ var arrowURL = "http://46.20.121.65/skin/frontend/theme13/default/images/arrow_r
 var html = ""
 console.log(dataJSON.payload.references.Post);
 for(let i = 0; i < 4; i++){
-    let img = articles[i].virtuals.previewImage;
-    let url = "https://medium.com/@1515582298020/"+articles[i].uniqueSlug;
-    let title = articles[i].title;
-    let desc = articles[i].content.subtitle;
+    let img = Object.keys(articles)[i].virtuals.previewImage;
+    let url = "https://medium.com/@1515582298020/"+Object.keys(articles)[i].uniqueSlug;
+    let title = Object.keys(articles)[i].title;
+    let desc = Object.keys(articles)[i].content.subtitle;
     html += '<div class="home__articles-list-item">';
     html += '<div class="home__articles-list-image" style="background-image: url("https://cdn-images-1.medium.com/max/1600/'+img+'")"></div>';
     html +='<div class="home__articles-list-content">';

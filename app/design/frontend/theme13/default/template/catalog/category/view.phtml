@@ -77,7 +77,6 @@
 
     <div class="collection__gallery">
         <div class="collection__gallery-content">
-            <p> <?php echo $_helper->categoryAttribute($_category, $_description, 'description') ?></p>
             <?php echo $this->getProductListHtml() ?>
 
         </div>
@@ -85,11 +84,3 @@
 
 </div>
 
-
-
-
-<?php if($_description=$this->getCurrentCategory()->getDescription()): ?>
-    <div class="category-description std">
-        <?php echo $_helper->categoryAttribute($_category, $_description, 'description') ?>
-    </div>
-    <?php endif; ?>

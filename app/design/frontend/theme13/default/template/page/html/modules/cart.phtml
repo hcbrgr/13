@@ -18,7 +18,7 @@ if ($count == null  ){
     
         <?php foreach ($cart->getAllItems() as $item): ?>
          <li class="cart__content-product">
-            <div class="cart__content-product-image" style="background-image: url('<?php $item->getProduct()->getImageUrl(); ?>');"></div>
+            <div class="cart__content-product-image" style="background-image: url('<?php echo  $item->getProduct()->getImageUrl(); ?>');"></div>
             <div class="cart__content-product-details">
                <div class="cart__content-product-infos">
                   <h3 class="cart__content-product-title">

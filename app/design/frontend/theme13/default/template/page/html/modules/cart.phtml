@@ -15,6 +15,7 @@ if ($count == null  ){
       <h3 class="cart__title">Mon panier</h3>
       <ul class="cart__content">
       <?php if($count > 0){ ?>
+        <?php var_dump($cart->getAllItems());?>
         <?php foreach ($cart->getAllItems() as $item): ?>
          <li class="cart__content-product">
             <div class="cart__content-product-image" style="background-image: url('<?php $item->getProduct()->getImageUrl(); ?>');"></div>
@@ -54,7 +55,7 @@ if ($count == null  ){
                      Total du panier (HT)
                   </p>
                   <p class="cart__details-totals-price">
-                  <?= $count ?>
+                  <?= $total ?>
                   </p>
                </li>
                <li>
@@ -70,7 +71,7 @@ if ($count == null  ){
                      TVA
                   </p>
                   <p class="cart__details-totals-price">
-                     31,72 €
+                  <?= $total ?>
                   </p>
                </li>
             </ul>
